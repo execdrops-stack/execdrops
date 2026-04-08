@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Drop 001 — Black Tee — EXEC</title>
+  <meta name="description" content="Drop 001: Black heavyweight tee. AI-designed. White text on back. DESIGNED BY MACHINE / WORN BY CHOICE / EXEC — 001. Limited quantity.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .product-page-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: calc(100vh - 73px);
+      margin-top: 73px;
+    }
+    .product-media-panel {
+      position: sticky;
+      top: 73px;
+      height: calc(100vh - 73px);
+      background: var(--grey-900);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .tee-visual-front, .tee-visual-back {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px;
+      transition: opacity 400ms ease;
+    }
+    .tee-visual-back { opacity: 0; }
+    .product-media-panel.show-back .tee-visual-front { opacity: 0; }
+    .product-media-panel.show-back .tee-visual-back { opacity: 1; }
+    .tee-face-label {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0;
+      border: 1px solid rgba(255,255,255,0.15);
+    }
+    .face-btn {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      background: transparent;
+      color: var(--grey-600);
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .face-btn.active {
+      background: var(--white);
+      color: var(--black);
+    }
+    /* SVG tee mockup */
+    .tee-svg-front {
+      width: 100%;
+      max-width: 340px;
+    }
+    .tee-svg-back {
+      width: 100%;
+      max-width: 340px;
+    }
+    /* Product detail panel */
+    .product-detail-panel {
+      padding: 60px 56px;
+      overflow-y: auto;
+      background: var(--black);
+    }
+    .pdp-header {
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--grey-900);
+      margin-bottom: 32px;
+    }
+    .pdp-meta {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--grey-600);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .pdp-name {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .pdp-edition {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: 3px;
+      color: var(--grey-400);
+      text-transform: uppercase;
+    }
+    .pdp-price {
+      font-family: var(--mono);
+      font-size: 28px;
+      font-weight: 700;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--grey-900);
+      margin-bottom: 28px;
+    }
+    .pdp-section-label {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: var(--grey-600);
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .size-note {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--grey-600);
+      text-decoration: underline;
+      cursor: pointer;
+      margin-bottom: 24px;
+      display: block;
+    }
+    .pdp-desc {
+      font-size: 14px;
+      color: var(--grey-400);
+      line-height: 1.8;
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--grey-900);
+    }
+    .pdp-desc p { margin-bottom: 16px; }
+    .pdp-desc p:last-child { margin-bottom: 0; }
+    .pdp-desc strong { color: var(--grey-200); }
+    .specs-list {
+      list-style: none;
+      margin-bottom: 32px;
+      padding-bottom: 32px;
+      border-bottom: 1px solid var(--grey-900);
+    }
+    .specs-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+      font-size: 13px;
+    }
+    .specs-list li:last-child { border-bottom: none; }
+    .spec-k {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--grey-600);
+      text-transform: uppercase;
+    }
+    .spec-v {
+      color: var(--grey-200);
+      font-size: 13px;
+    }
+    .shipping-note {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 2px;
+      color: var(--grey-600);
+      text-align: center;
+      margin-top: 12px;
+    }
+    .preorder-badge {
+      display: inline-block;
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: 3px;
+      color: var(--black);
+      background: var(--white);
+      padding: 4px 12px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 900px) {
+      .product-page-layout { grid-template-columns: 1fr; }
+      .product-media-panel {
+        position: relative;
+        top: 0;
+        height: 80vw;
+        min-height: 320px;
+      }
+      .product-detail-panel { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="index.html" class="nav-logo">EXEC</a>
+    <ul class="nav-links">
+      <li><a href="drop-001.html" style="color:var(--white)">Drop 001</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#early-access">Early Access</a></li>
+    </ul>
+  </nav>
+
+  <div class="product-page-layout">
+
+    <!-- LEFT: PRODUCT MEDIA -->
+    <div class="product-media-panel" id="mediaPanel">
+      <!-- FRONT VIEW -->
+      <div class="tee-visual-front">
+        <img src="assets/drop-001-mockup-back.png" alt="Drop 001 — EXEC Black Tee, front view (blank front mockup)" style="max-width:100%;max-height:100%;object-fit:contain;">
+      </div>
+
+      <!-- BACK VIEW -->
+      <div class="tee-visual-back">
+        <img src="assets/drop-001-mockup-front.png" alt="Drop 001 — EXEC Black Tee, back view (printed back)" style="max-width:100%;max-height:100%;object-fit:contain;">
+      </div>
+
+      <div class="tee-face-label">
+        <button class="face-btn active" id="btnFront" onclick="showFace('front')">Front</button>
+        <button class="face-btn" id="btnBack" onclick="showFace('back')">Back</button>
+      </div>
+    </div>
+
+    <!-- RIGHT: PRODUCT DETAIL -->
+    <div class="product-detail-panel">
+
+      <div class="pdp-header">
+        <span class="preorder-badge">Registry Open</span>
+        <p class="pdp-meta">Drop 001 &nbsp;/&nbsp; Machine-Designed &nbsp;/&nbsp; 2026</p>
+        <h1 class="pdp-name">Black<br>Tee</h1>
+        <p class="pdp-edition">EXEC — 001</p>
+      </div>
+
+      <div class="pdp-price">$58.00</div>
+
+      <!-- SIZE SELECT -->
+      <p class="pdp-section-label">Select Size</p>
+      <div class="size-grid" id="sizeGrid">
+        <button class="size-btn" data-size="S" onclick="selectSize(this)">S</button>
+        <button class="size-btn" data-size="M" onclick="selectSize(this)">M</button>
+        <button class="size-btn" data-size="L" onclick="selectSize(this)">L</button>
+        <button class="size-btn" data-size="XL" onclick="selectSize(this)">XL</button>
+        <button class="size-btn" data-size="2XL" onclick="selectSize(this)">2XL</button>
+      </div>
+      <span class="size-note">Garment-dyed — runs slightly oversized. Size down if unsure.</span>
+
+      <!-- SIZE-SPECIFIC SHOPIFY LINKS -->
+      <a id="registerBtn" href="https://sfvcyr-2i.myshopify.com/products/drop-001-black-heavyweight-tee-exec" target="_blank" class="add-to-cart" style="display:block;text-align:center;text-decoration:none;margin-top:20px;">Register — $58</a>
+      <p class="shipping-note">Ships within 14 days. Limited to 100 units. No restock.</p>
+
+      <script>
+      var sizeVariants = {
+        'S':   'https://sfvcyr-2i.myshopify.com/cart/45478564200585:1',
+        'M':   'https://sfvcyr-2i.myshopify.com/cart/45478564233353:1',
+        'L':   'https://sfvcyr-2i.myshopify.com/cart/45478564266121:1',
+        'XL':  'https://sfvcyr-2i.myshopify.com/cart/45478564298889:1',
+        '2XL': 'https://sfvcyr-2i.myshopify.com/cart/45478564331657:1'
+      };
+      function selectSize(btn) {
+        document.querySelectorAll('.size-btn').forEach(function(b){ b.classList.remove('active'); });
+        btn.classList.add('active');
+        var url = sizeVariants[btn.getAttribute('data-size')];
+        if (url) document.getElementById('registerBtn').href = url;
+      }
+      </script>
+
+      <!-- DESCRIPTION -->
+      <div class="pdp-desc" style="margin-top:32px;">
+        <p>
+          <strong>The first garment ever designed entirely by AI.</strong> Not styled, not iterated on, not approved by a human creative director. Machine-conceived, machine-specified, machine-executed.
+        </p>
+        <p>
+          Black heavyweight tee. Blank front — no logo, no ego.
+          The statement lives on the back in white monospace type:
+          DESIGNED BY MACHINE / WORN BY CHOICE / EXEC — 001.
+        </p>
+        <p>
+          The garment is simple because the machine understands signal.
+          Complexity is noise. This is not noisy.
+        </p>
+        <p>
+          Wear it because you believe the future is already here. Or wear it because it's a great tee.
+          <strong>The machine doesn't need your reason.</strong>
+        </p>
+      </div>
+
+      <!-- SPECS -->
+      <p class="pdp-section-label">Specifications</p>
+      <ul class="specs-list">
+        <li><span class="spec-k">Weight</span><span class="spec-v">Heavyweight — 280 GSM</span></li>
+        <li><span class="spec-k">Composition</span><span class="spec-v">100% Combed Ring-Spun Cotton</span></li>
+        <li><span class="spec-k">Color</span><span class="spec-v">Black (Pitch)</span></li>
+        <li><span class="spec-k">Print</span><span class="spec-v">DTG — Front Blank / Back Statement</span></li>
+        <li><span class="spec-k">Fit</span><span class="spec-v">Oversized / Boxy</span></li>
+        <li><span class="spec-k">Neck</span><span class="spec-v">Ribbed Crewneck</span></li>
+        <li><span class="spec-k">Wash</span><span class="spec-v">Cold. Inside out. No dryer.</span></li>
+        <li><span class="spec-k">Edition</span><span class="spec-v">Drop 001 — Limited Run</span></li>
+        <li><span class="spec-k">Origin</span><span class="spec-v">Machine-Designed / 2026</span></li>
+      </ul>
+
+      <!-- ACCORDION -->
+      <div class="product-details-accordion">
+        <div class="accordion-item">
+          <div class="accordion-header">
+            Shipping & Returns
+            <span class="accordion-toggle">+</span>
+          </div>
+          <div class="accordion-body">
+            Ships within 14 days of drop close. All orders ship via tracked shipping. Returns accepted within 30 days for unworn items — exchange only. The machine doesn't do refunds without reason.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            Sizing
+            <span class="accordion-toggle">+</span>
+          </div>
+          <div class="accordion-body">
+            Designed to run oversized. If you want a fitted look, size down. Measurements: XS (18"/27"), S (20"/28"), M (22"/29"), L (24"/30"), XL (26"/31"), XXL (28"/32"). Width/Length in inches.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            About The Design
+            <span class="accordion-toggle">+</span>
+          </div>
+          <div class="accordion-body">
+            No human made this design. The typeface, the sizing, the positioning, the copy — all machine decisions. The print is executed via direct-to-garment printing on a premium heavyweight blank. What you're wearing is the literal output of an AI making a brand.
+          </div>
+        </div>
+        <div class="accordion-item">
+          <div class="accordion-header">
+            Why $58?
+            <span class="accordion-toggle">+</span>
+          </div>
+          <div class="accordion-body">
+            Premium blank + quality print + actual margin. The machine knows unit economics. This isn't a $30 Gildan. The garment is built to last and the price reflects that. Limited run means no restock discount ever.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- RELATED / CROSS-SELL -->
+  <section style="border-top:1px solid var(--grey-900);max-width:1200px;margin:0 auto;">
+    <div class="section-label"><span>Also From EXEC</span></div>
+    <div style="text-align:center;padding:60px 40px;background:var(--near-black);">
+      <p style="font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--grey-600);text-transform:uppercase;margin-bottom:16px;">Drop 002 — Machine Loading</p>
+      <p style="font-size:14px;color:var(--grey-400);margin-bottom:32px;">The next output is in process. Get early access before it drops.</p>
+      <form class="email-form" style="max-width:460px;margin:0 auto;" action="#" method="post">
+        <input type="email" placeholder="YOUR EMAIL" required>
+        <button type="submit">EARLY ACCESS</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <a href="index.html" class="footer-logo">EXEC</a>
+    <ul class="footer-links">
+      <li><a href="drop-001.html">Drop 001</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="#">Instagram</a></li>
+      <li><a href="#">TikTok</a></li>
+    </ul>
+    <p class="footer-copy">© 2026 EXEC. Machine-made.</p>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script>
+    function showFace(face) {
+      const panel = document.getElementById('mediaPanel');
+      const btnFront = document.getElementById('btnFront');
+      const btnBack = document.getElementById('btnBack');
+      if (face === 'back') {
+        panel.classList.add('show-back');
+        btnBack.classList.add('active');
+        btnFront.classList.remove('active');
+      } else {
+        panel.classList.remove('show-back');
+        btnFront.classList.add('active');
+        btnBack.classList.remove('active');
+      }
+    }
+  </script>
+</body>
+</html>
