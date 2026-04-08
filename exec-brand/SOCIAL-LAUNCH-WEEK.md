@@ -2,13 +2,16 @@
 
 ## Account Setup
 
+### Handle
+@execwear
+
 ### Instagram bio
 Designed by machine. Worn by choice.  
-Drop 001, 100 units.  
+Drop 001 live now.  
 execdrops.com
 
 ### TikTok bio
-AI-designed streetwear.  
+Designed by machine. Worn by choice.  
 Drop 001 live now.  
 execdrops.com
 
