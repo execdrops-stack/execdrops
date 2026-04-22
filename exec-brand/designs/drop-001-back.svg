@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <!-- Background (represents tee fabric) -->
+  <rect width="800" height="600" fill="#0a0a0a"/>
+
+  <!-- Print area guide (not visible in final, just for layout) -->
+  <!-- Centered text block, large back print -->
+
+  <!-- Line 1: DESIGNED BY MACHINE -->
+  <text
+    x="400"
+    y="210"
+    font-family="'Courier New', Courier, monospace"
+    font-size="62"
+    font-weight="700"
+    letter-spacing="8"
+    text-anchor="middle"
+    fill="#FFFFFF"
+    style="text-transform: uppercase;">DESIGNED BY MACHINE</text>
+
+  <!-- Divider line -->
+  <line x1="120" y1="248" x2="680" y2="248" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Line 2: WORN BY CHOICE -->
+  <text
+    x="400"
+    y="320"
+    font-family="'Courier New', Courier, monospace"
+    font-size="62"
+    font-weight="700"
+    letter-spacing="8"
+    text-anchor="middle"
+    fill="#FFFFFF">WORN BY CHOICE</text>
+
+  <!-- Divider line -->
+  <line x1="120" y1="355" x2="680" y2="355" stroke="#FFFFFF" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Line 3: EXEC — 001 -->
+  <text
+    x="400"
+    y="430"
+    font-family="'Courier New', Courier, monospace"
+    font-size="72"
+    font-weight="900"
+    letter-spacing="16"
+    text-anchor="middle"
+    fill="#FFFFFF">EXEC — 001</text>
+
+  <!-- Small edition marker -->
+  <text
+    x="400"
+    y="490"
+    font-family="'Courier New', Courier, monospace"
+    font-size="13"
+    font-weight="400"
+    letter-spacing="5"
+    text-anchor="middle"
+    fill="#666666">MACHINE-MADE / DROP ONE / 2026</text>
+</svg>
