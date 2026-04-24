@@ -17,7 +17,7 @@
       position: sticky;
       top: 73px;
       height: calc(100vh - 73px);
-      background: var(--grey-900);
+      background: var(--black);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -29,7 +29,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 80px;
+      padding: 48px;
       transition: opacity 400ms ease;
     }
     .tee-visual-back { opacity: 0; }
@@ -189,8 +189,12 @@
       .product-media-panel {
         position: relative;
         top: 0;
-        height: 80vw;
-        min-height: 320px;
+        height: 68vw;
+        min-height: 280px;
+        max-height: 520px;
+      }
+      .tee-visual-front, .tee-visual-back {
+        padding: 20px 20px 72px;
       }
       .product-detail-panel { padding: 40px 24px; }
     }
@@ -210,7 +214,7 @@
   <div class="product-page-layout">
 
     <!-- LEFT: PRODUCT MEDIA -->
-    <div class="product-media-panel" id="mediaPanel">
+    <div class="product-media-panel show-back" id="mediaPanel">
       <!-- FRONT VIEW -->
       <div class="tee-visual-front">
         <img src="assets/drop-001-mockup-front.png" alt="Drop 001 — EXEC Black Tee, blank front view" style="max-width:100%;max-height:100%;object-fit:contain;">
@@ -222,8 +226,8 @@
       </div>
 
       <div class="tee-face-label">
-        <button class="face-btn active" id="btnFront" onclick="showFace('front')">Front</button>
-        <button class="face-btn" id="btnBack" onclick="showFace('back')">Back</button>
+        <button class="face-btn" id="btnFront" onclick="showFace('front')">Front</button>
+        <button class="face-btn active" id="btnBack" onclick="showFace('back')">Back</button>
       </div>
     </div>
 
