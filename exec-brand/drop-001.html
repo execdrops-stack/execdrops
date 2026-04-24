@@ -270,7 +270,7 @@
         <p class="pdp-edition">EXEC — 001</p>
       </div>
 
-      <div class="pdp-price">$58.00</div>
+      <div class="pdp-price">$60.00</div>
 
       <!-- SIZE SELECT -->
       <p class="pdp-section-label">Select Size</p>
@@ -283,23 +283,17 @@
       </div>
       <span class="size-note">Garment-dyed — runs slightly oversized. Size down if unsure.</span>
 
-      <!-- SIZE-SPECIFIC SHOPIFY LINKS -->
-      <a id="registerBtn" href="https://sfvcyr-2i.myshopify.com/products/drop-001-black-heavyweight-tee-exec" target="_blank" class="add-to-cart" style="display:block;text-align:center;text-decoration:none;margin-top:20px;">Register — $58</a>
-      <p class="shipping-note">Ships within 14 days. Limited to 100 units. No restock.</p>
+      <a id="registerBtn" href="mailto:execdrops@gmail.com?subject=EXEC%20Drop%20001%20Alignment%20Request&body=I%20want%20to%20reserve%20a%20Drop%20001%20unit.%0A%0ASize%3A%20" class="add-to-cart" style="display:block;text-align:center;text-decoration:none;margin-top:20px;">Request Alignment — $60</a>
+      <p class="shipping-note">Storefront opening is pending. Use this request flow to reserve a unit now. Limited to 100 units. No restock.</p>
 
       <script>
-      var sizeVariants = {
-        'S':   'https://sfvcyr-2i.myshopify.com/cart/45478564200585:1',
-        'M':   'https://sfvcyr-2i.myshopify.com/cart/45478564233353:1',
-        'L':   'https://sfvcyr-2i.myshopify.com/cart/45478564266121:1',
-        'XL':  'https://sfvcyr-2i.myshopify.com/cart/45478564298889:1',
-        '2XL': 'https://sfvcyr-2i.myshopify.com/cart/45478564331657:1'
-      };
       function selectSize(btn) {
         document.querySelectorAll('.size-btn').forEach(function(b){ b.classList.remove('active'); });
         btn.classList.add('active');
-        var url = sizeVariants[btn.getAttribute('data-size')];
-        if (url) document.getElementById('registerBtn').href = url;
+        var size = btn.getAttribute('data-size');
+        var base = 'mailto:execdrops@gmail.com?subject=EXEC%20Drop%20001%20Alignment%20Request&body=';
+        var body = encodeURIComponent('I want to reserve a Drop 001 unit.\n\nSize: ' + size + '\n');
+        document.getElementById('registerBtn').href = base + body;
       }
       </script>
 
