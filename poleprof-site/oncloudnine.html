@@ -3,366 +3,225 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>On Cloud Nine — Pole Fitness Apparel by Pole Proficiency</title>
-  <meta name="description" content="On Cloud Nine — athletic and artistic apparel for pole dancers. Two collections: The Athletic and The Artiste. By April at Pole Proficiency Aerial Fitness." />
+  <title>On Cloud Nine Shop | Pole Proficiency</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BGS7B382M1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BGS7B382M1', {
+      page_title: 'On Cloud Nine Shop',
+      page_path: '/oncloudnine'
+    });
+  </script>
+  <meta name="description" content="The Authentically Yours crewneck pre-sale has ended. Join the newsletter for the next On Cloud Nine drop." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --cloud: #f8fbff;
-      --sky-pale: #eef5fc;
-      --sky: #c8dff0;
-      --blue: #4a90b8;
-      --deep: #1a3a5c;
-      --ink: #1a2e3b;
-      --muted: #5a7a8a;
-      --border: #daeaf5;
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body: 'DM Sans', system-ui, sans-serif;
-      --radius: 14px;
-      --transition: 0.3s ease;
+      --bg: #f7fbff;
+      --card: #ffffff;
+      --ink: #17313d;
+      --muted: #5c7785;
+      --line: #dbe8ef;
+      --accent: #7db8d2;
+      --accent-dark: #2e7d8c;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --radius: 18px;
     }
-    html { scroll-behavior: smooth; }
-    body { font-family: var(--font-body); color: var(--ink); background: var(--cloud); line-height: 1.7; overflow-x: hidden; }
-    .container { max-width: 1100px; margin: 0 auto; padding: 0 2rem; }
-    h1, h2, h3 { font-family: var(--font-display); line-height: 1.15; }
-    p { color: var(--muted); }
-    a { text-decoration: none; color: inherit; }
-    .eyebrow { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue); margin-bottom: 0.6rem; }
-    .center { text-align: center; }
-    .btn { display: inline-block; padding: 0.85rem 2.2rem; border-radius: 50px; font-family: var(--font-body); font-weight: 600; font-size: 0.95rem; transition: var(--transition); cursor: pointer; border: 2px solid transparent; }
-    .btn-dark { background: var(--deep); color: white; border-color: var(--deep); }
-    .btn-dark:hover { background: var(--ink); transform: translateY(-2px); }
-    .btn-outline { background: transparent; color: var(--deep); border-color: var(--blue); }
-    .btn-outline:hover { background: var(--deep); color: white; }
-
-    /* NAV */
-    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.2rem 0; background: rgba(248,251,255,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
-    .nav-inner { max-width: 1100px; margin: 0 auto; padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; }
-    .nav-brand { font-family: var(--font-display); font-size: 1.4rem; font-style: italic; color: var(--deep); font-weight: 700; letter-spacing: -0.02em; }
-    .nav-back { font-size: 0.85rem; color: var(--muted); display: flex; align-items: center; gap: 0.4rem; transition: var(--transition); }
-    .nav-back:hover { color: var(--blue); }
-
-    /* HERO */
-    .hero {
-      min-height: 100vh;
-      display: flex; align-items: center; justify-content: center;
-      text-align: center;
-      padding: 8rem 2rem 5rem;
-      background: linear-gradient(180deg, #d6eaf8 0%, #eef5fc 50%, #f8fbff 100%);
-      position: relative; overflow: hidden;
+    body {
+      font-family: var(--font-body);
+      background: linear-gradient(180deg, #eaf5fb 0%, var(--bg) 35%, #ffffff 100%);
+      color: var(--ink);
+      line-height: 1.6;
     }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(74,144,184,0.15) 0%, transparent 70%);
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+    nav {
+      position: sticky; top: 0; z-index: 20;
+      backdrop-filter: blur(12px);
+      background: rgba(247,251,255,0.9);
+      border-bottom: 1px solid var(--line);
     }
-    /* Floating clouds decoration */
-    .cloud-deco {
-      position: absolute; border-radius: 50px;
-      background: rgba(255,255,255,0.7);
-      filter: blur(1px);
+    .nav-inner {
+      max-width: 1120px; margin: 0 auto; padding: 0.7rem 1.5rem;
+      display: flex; justify-content: center; align-items: center;
+      position: relative;
     }
-    .cloud-deco.c1 { width: 200px; height: 60px; top: 15%; left: 5%; opacity: 0.8; animation: float 8s ease-in-out infinite; }
-    .cloud-deco.c2 { width: 140px; height: 45px; top: 25%; right: 8%; opacity: 0.6; animation: float 10s ease-in-out infinite 2s; }
-    .cloud-deco.c3 { width: 100px; height: 35px; top: 60%; left: 3%; opacity: 0.5; animation: float 12s ease-in-out infinite 4s; }
-    .cloud-deco.c4 { width: 180px; height: 55px; bottom: 20%; right: 5%; opacity: 0.7; animation: float 9s ease-in-out infinite 1s; }
-    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
-
-    .hero-content { position: relative; z-index: 1; max-width: 700px; }
-    .hero-content .eyebrow { color: var(--blue); margin-bottom: 1.2rem; }
-    .hero-title { font-size: clamp(3.5rem, 9vw, 7rem); font-weight: 700; color: var(--deep); line-height: 1; margin-bottom: 0.5rem; }
-    .hero-title em { font-style: italic; color: var(--blue); }
-    .hero-sub { font-size: 1.1rem; color: var(--muted); margin: 1.5rem auto 2.5rem; max-width: 480px; }
-    .hero-tagline { font-family: var(--font-display); font-size: 1.4rem; font-style: italic; color: var(--deep); opacity: 0.7; margin-bottom: 2.5rem; }
-    .presale-note {
-      margin: 0 auto 2rem;
-      max-width: 620px;
-      padding: 1rem 1.25rem;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.72);
-      border: 1px solid rgba(74,144,184,0.2);
-      box-shadow: 0 16px 40px rgba(74,144,184,0.12);
+    .brand-logo {
+      max-width: 620px; width: 100%; display: block; margin: 0 auto;
+      mix-blend-mode: multiply;
+      opacity: 0.82;
+      filter: saturate(0.88) brightness(1.02) drop-shadow(0 4px 12px rgba(23,49,61,0.04));
     }
-    .presale-note strong {
-      display: block;
-      color: var(--deep);
-      font-size: 1rem;
-      margin-bottom: 0.35rem;
+    .back { color: var(--muted); text-decoration: none; font-size: 0.88rem; position: absolute; right: 1.5rem; top: 50%; transform: translateY(-50%); }
+    .hero { padding: 1.2rem 0 1rem; text-align: center; }
+    h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1; margin-bottom: 0.8rem;
     }
-    .presale-note p {
-      margin: 0;
-      color: var(--muted);
-      font-size: 0.95rem;
+    .lead {
+      max-width: 700px; margin: 0 auto; font-size: 1.02rem; color: var(--muted);
     }
-    .presale-note .small {
-      margin-top: 0.55rem;
-      font-size: 0.8rem;
-      color: var(--muted);
+    .product { padding: 1rem 0 4rem; }
+    .product-grid {
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 2rem; align-items: start;
     }
-
-    /* COLLECTIONS */
-    .collections { padding: 7rem 0; background: white; }
-    .collections h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 0.5rem; }
-    .collections-intro { max-width: 560px; margin: 0 auto 4rem; }
-    .collections-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
-    .collection-card {
-      border-radius: 20px; overflow: hidden;
-      border: 1.5px solid var(--border);
-      transition: var(--transition);
+    .gallery-card, .details-card {
+      background: var(--card); border: 1px solid var(--line); border-radius: var(--radius);
+      box-shadow: 0 10px 30px rgba(23,49,61,0.05);
     }
-    .collection-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(26,58,92,0.12); }
-    .collection-hero {
-      padding: 4rem 2.5rem;
-      display: flex; flex-direction: column; align-items: flex-start;
-      min-height: 320px; justify-content: flex-end;
-      position: relative; overflow: hidden;
+    .gallery-card { padding: 1rem; }
+    .hero-image { width: 100%; border-radius: 14px; display: block; }
+    .details-card { padding: 2rem; }
+    .details-card h2 {
+      font-family: var(--font-display); font-size: 2.3rem; line-height: 1.05; margin-bottom: 0.75rem; text-align: center;
     }
-    .collection-card.athletic .collection-hero {
-      background: linear-gradient(145deg, var(--deep) 0%, #0d2035 100%);
+    .details-card p { color: var(--muted); margin-bottom: 1rem; }
+    .note, .status-box, .newsletter-wrap {
+      background: #f2f9fc; border: 1px solid var(--line); border-radius: 14px; padding: 1rem 1.1rem;
     }
-    .collection-card.artiste .collection-hero {
-      background: linear-gradient(145deg, #8bb8d4 0%, #c8dff0 50%, #e8f3fa 100%);
+    .note { margin: 1.25rem 0 1.2rem; }
+    .status-box { margin: 1.25rem 0 1rem; }
+    .newsletter-wrap { margin-top: 1rem; }
+    .status-box strong, .note strong { color: var(--ink); }
+    .detail-list {
+      list-style: none; display: grid; gap: 0.85rem; margin: 1.4rem 0 1.5rem;
     }
-    .collection-tag {
-      position: absolute; top: 1.5rem; left: 1.5rem;
-      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em;
-      text-transform: uppercase; padding: 0.3rem 0.9rem;
-      border-radius: 50px;
+    .detail-list li {
+      padding: 0.9rem 1rem; border-radius: 14px; background: #fbfdff; border: 1px solid var(--line);
+      color: var(--ink);
     }
-    .athletic .collection-tag { background: rgba(255,255,255,0.15); color: white; border: 1px solid rgba(255,255,255,0.3); }
-    .artiste .collection-tag { background: rgba(255,255,255,0.5); color: var(--deep); border: 1px solid rgba(255,255,255,0.7); }
-    .collection-name { font-family: var(--font-display); font-size: 2.5rem; font-weight: 700; line-height: 1.1; margin-bottom: 0.5rem; }
-    .athletic .collection-name { color: white; }
-    .artiste .collection-name { color: var(--deep); }
-    .collection-desc { font-size: 0.88rem; }
-    .athletic .collection-desc { color: rgba(255,255,255,0.7); }
-    .artiste .collection-desc { color: var(--deep); opacity: 0.75; }
-    .collection-body { padding: 2rem 2.5rem; }
-    .collection-body p { font-size: 0.9rem; margin-bottom: 1.5rem; }
-    .piece-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 2rem; }
-    .piece-item {
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0.85rem 1.2rem;
-      background: var(--sky-pale); border-radius: 10px;
-      border: 1px solid var(--border);
+    .newsletter-wrap h3 {
+      font-family: var(--font-display); font-size: 1.55rem; margin-bottom: 0.45rem; text-align: center;
     }
-    .piece-name { font-weight: 600; font-size: 0.9rem; color: var(--ink); }
-    .piece-badge { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.2rem 0.7rem; border-radius: 50px; }
-    .badge-soon { background: var(--sky); color: var(--deep); }
-    .badge-new { background: var(--deep); color: white; }
-
-    /* WAITLIST */
-    .waitlist { padding: 7rem 0; background: linear-gradient(160deg, var(--deep) 0%, #0d2035 100%); text-align: center; }
-    .waitlist h2 { color: white; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
-    .waitlist p { color: rgba(255,255,255,0.75); max-width: 500px; margin: 0 auto 2.5rem; }
-    .waitlist-form { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; max-width: 500px; margin: 0 auto; }
+    .newsletter-wrap p.small {
+      font-size: 0.88rem; color: var(--muted); text-align: center; margin-top: 0.75rem;
+    }
+    .waitlist-form {
+      display: grid; gap: 0.85rem; margin-top: 1rem;
+    }
     .waitlist-form input {
-      flex: 1; min-width: 220px;
-      padding: 0.9rem 1.3rem;
-      border-radius: 50px; border: none;
-      background: rgba(255,255,255,0.1);
-      color: white; font-family: var(--font-body); font-size: 0.95rem;
-      border: 1.5px solid rgba(255,255,255,0.2);
+      width: 100%;
+      padding: 0.95rem 1.05rem;
+      border-radius: 999px;
+      border: 1.5px solid var(--line);
+      background: white;
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-size: 0.96rem;
       outline: none;
     }
-    .waitlist-form input::placeholder { color: rgba(255,255,255,0.4); }
-    .waitlist-form input:focus { border-color: var(--sky); background: rgba(255,255,255,0.15); }
-    .waitlist-form button {
-      padding: 0.9rem 2rem; border-radius: 50px; border: none;
-      background: white; color: var(--deep);
-      font-family: var(--font-body); font-weight: 700; font-size: 0.95rem;
-      cursor: pointer; transition: var(--transition);
+    .waitlist-form input:focus {
+      border-color: var(--accent-dark);
+      box-shadow: 0 0 0 4px rgba(46,125,140,0.08);
     }
-    .waitlist-form button:hover { background: var(--sky); transform: translateY(-2px); }
+    .cta {
+      display: inline-block; width: 100%; text-align: center; text-decoration: none;
+      background: var(--accent-dark); color: white; font-weight: 700;
+      padding: 1rem 1.25rem; border-radius: 999px; border: none; cursor: pointer;
+    }
+    .cta:hover { filter: brightness(0.98); }
     .waitlist-message {
-      max-width: 500px;
-      margin: 1rem auto 0;
-      font-size: 0.88rem;
-      color: white;
       min-height: 1.4rem;
+      margin-top: 0.85rem;
+      text-align: center;
+      color: var(--accent-dark);
+      font-size: 0.92rem;
+      font-weight: 500;
     }
-    .waitlist-note { font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 1rem; }
-
-    /* ABOUT */
-    .about-brand { padding: 7rem 0; background: var(--sky-pale); }
-    .about-brand-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
-    .about-brand h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 1rem; }
-    .about-brand p { margin-bottom: 1rem; }
-    .cloud-art {
-      aspect-ratio: 1;
-      background: linear-gradient(145deg, #c8dff0 0%, #eef5fc 60%, white 100%);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-display);
-      font-size: 3rem; font-style: italic;
-      color: var(--deep); opacity: 0.8;
-      box-shadow: 0 20px 60px rgba(74,144,184,0.2);
-      max-width: 320px; margin: 0 auto;
+    .subcta {
+      margin-top: 0.9rem; font-size: 0.92rem; color: var(--muted); text-align: center;
     }
-
-    /* FOOTER */
-    footer { background: var(--ink); padding: 2.5rem 0; text-align: center; }
-    .footer-inner { display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
-    .footer-brand { font-family: var(--font-display); font-size: 1.1rem; font-style: italic; color: white; }
-    .footer-links { display: flex; gap: 1.5rem; }
-    .footer-links a { font-size: 0.82rem; color: #5a7a8a; transition: var(--transition); }
-    .footer-links a:hover { color: var(--sky); }
-    .footer-copy { font-size: 0.72rem; color: #2a4050; }
-
-    @media (max-width: 768px) {
-      .collections-grid, .about-brand-inner { grid-template-columns: 1fr; }
-      .cloud-art { max-width: 220px; }
+    .size-chart {
+      margin-top: 2rem;
+      grid-column: 1 / -1;
+    }
+    .size-chart h3 {
+      font-family: var(--font-display); font-size: 1.45rem; margin-bottom: 0.75rem;
+    }
+    .size-chart img {
+      width: 100%; display: block; border-radius: 14px; border: 1px solid var(--line); background: #fff;
+      max-width: 920px; margin: 0 auto;
+    }
+    @media (max-width: 860px) {
+      .product-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 560px) {
+      .hero { padding-top: 3.5rem; }
+      .nav-inner { justify-content: center; padding: 0.75rem 1rem 0.9rem; }
+      .brand-logo { max-width: 360px; }
+      .back { position: static; transform: none; display: block; margin-top: 0.5rem; text-align: center; }
+      .details-card { padding: 1.35rem; }
+      .details-card h2 { font-size: 1.9rem; }
     }
   </style>
 </head>
 <body>
-
   <nav>
     <div class="nav-inner">
-      <span class="nav-brand">On Cloud Nine</span>
-      <a href="index.html" class="nav-back">← Back to Pole Proficiency</a>
+      <img class="brand-logo" src="on-cloud-nine-logo.png" alt="On Cloud Nine" />
+      <a class="back" href="index.html">← Back to Pole Proficiency</a>
     </div>
   </nav>
 
-  <!-- HERO -->
   <section class="hero">
-    <div class="cloud-deco c1"></div>
-    <div class="cloud-deco c2"></div>
-    <div class="cloud-deco c3"></div>
-    <div class="cloud-deco c4"></div>
-    <div class="hero-content">
-      <span class="eyebrow center">By Pole Proficiency Aerial Fitness</span>
-      <h1 class="hero-title">On Cloud<br><em>Nine</em></h1>
-      <p class="hero-tagline">Apparel for the ones who fly.</p>
-      <div class="presale-note">
-        <strong>The pre-sale for the Authentically Yours crewneck has ended.</strong>
-        <p>Please check back for the next drop.</p>
-        <p class="small">For new design drop updates, follow <a href="https://www.instagram.com/pole_prof/" target="_blank" rel="noopener">@pole_prof on Instagram</a> or sign up for the newsletter below.</p>
-      </div>
-      <p class="hero-sub">Two collections for pole dancers — one fierce, one ethereal. Built for the sport. Worn for the art.</p>
-      <a href="#waitlist" class="btn btn-dark">Get Notified for the Next Drop</a>
+    <div class="container">
+      <h1>Pre-Sale Closed</h1>
+      <p class="lead">The Authentically Yours crewneck pre-sale has ended. Check back in for the next drop.</p>
     </div>
   </section>
 
-  <!-- COLLECTIONS -->
-  <section id="collections" class="collections">
+  <section class="product">
     <div class="container">
-      <p class="eyebrow center">Our Collections</p>
-      <h2 class="center">Two Sides of the Sport</h2>
-      <p class="center collections-intro">Whether you train hard or perform beautifully — or both — there's a collection for you.</p>
-
-      <div class="collections-grid">
-
-        <!-- THE ATHLETIC -->
-        <div class="collection-card athletic">
-          <div class="collection-hero">
-            <div class="collection-tag">Collection 01</div>
-            <div>
-              <h3 class="collection-name">The<br>Athletic</h3>
-              <p class="collection-desc">Strong. Fierce. Unapologetic.</p>
-            </div>
-          </div>
-          <div class="collection-body">
-            <p>For the pole athlete who shows up, trains hard, and owns every second of it. Bold graphics, clean lines, and messages that say exactly what you mean.</p>
-            <ul class="piece-list">
-              <li class="piece-item">
-                <span class="piece-name">Trained Not Tamed — Tee</span>
-                <span class="piece-badge badge-soon">Coming Soon</span>
-              </li>
-              <li class="piece-item">
-                <span class="piece-name">On Cloud Nine — Tank</span>
-                <span class="piece-badge badge-soon">Coming Soon</span>
-              </li>
-              <li class="piece-item">
-                <span class="piece-name">Trained Not Tamed — Crop Hoodie</span>
-                <span class="piece-badge badge-soon">Coming Soon</span>
-              </li>
-            </ul>
-            <a href="#waitlist" class="btn btn-outline" style="width:100%;text-align:center">Join the Newsletter</a>
-          </div>
+      <div class="product-grid">
+        <div class="gallery-card">
+          <img class="hero-image" src="store-poler-grid.jpg" alt="Poler sweatshirt color options collage" />
         </div>
 
-        <!-- THE ARTISTE -->
-        <div class="collection-card artiste">
-          <div class="collection-hero">
-            <div class="collection-tag">Collection 02</div>
-            <div>
-              <h3 class="collection-name">The<br>Artiste</h3>
-              <p class="collection-desc">Soft. Ethereal. Expressive.</p>
-            </div>
+        <div class="details-card">
+          <h2>Authentically Yours Crewneck Sweatshirt</h2>
+          <p>This comfy cotton blend crewneck features puff-print lettering made to stand out, just like you. This drop is now closed, but you can join the newsletter to hear about the next release first.</p>
+
+          <div class="note">
+            <strong>Available sizes:</strong> Small through Extra Large
           </div>
-          <div class="collection-body">
-            <p>For the performer, the dreamer, the one who sees pole as pure art. Delicate designs, soft palettes, and pieces you'll wear everywhere.</p>
-            <ul class="piece-list">
-              <li class="piece-item">
-                <span class="piece-name">On Cloud Nine — Script Tee</span>
-                <span class="piece-badge badge-soon">Coming Soon</span>
-              </li>
-              <li class="piece-item">
-                <span class="piece-name">Aerial Grace — Oversized Tee</span>
-                <span class="piece-badge badge-soon">Coming Soon</span>
-              </li>
-              <li class="piece-item">
-                <span class="piece-name">Find Your Nine — Pullover</span>
-                <span class="piece-badge badge-soon">Coming Soon</span>
-              </li>
-            </ul>
-            <a href="#waitlist" class="btn btn-outline" style="width:100%;text-align:center">Join the Newsletter</a>
+
+          <ul class="detail-list">
+            <li><strong>Available colors:</strong> White, Sand, Black, Pink</li>
+            <li><strong>Customization:</strong> Add the year you started poling</li>
+          </ul>
+
+          <div class="status-box">
+            <strong>The pre-sale for the Authentically Yours crewneck has ended.</strong><br />
+            Please check back in for the next drop.
           </div>
+
+          <div class="newsletter-wrap">
+            <h3>Sign Up for the Newsletter</h3>
+            <p>Fill out the form below to subscribe and be the first to know when the next design drop goes live.</p>
+            <form id="waitlistForm" class="waitlist-form" action="https://formspree.io/f/april.piazza@gmail.com" method="POST">
+              <input type="hidden" name="subject" value="On Cloud Nine Newsletter Signup" />
+              <input type="email" name="email" placeholder="your@email.com" required />
+              <button type="submit" class="cta">Subscribe ☁️</button>
+            </form>
+            <p id="waitlistMessage" class="waitlist-message" aria-live="polite"></p>
+            <p class="small">For new design drop updates, follow <a href="https://www.instagram.com/pole_prof/" target="_blank" rel="noopener">@pole_prof on Instagram</a> or join the newsletter.</p>
+          </div>
+
+          <p class="subcta">The ability to purchase this item has been removed until the next drop opens.</p>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT THE BRAND -->
-  <section class="about-brand">
-    <div class="container">
-      <div class="about-brand-inner">
-        <div class="cloud-art">On Cloud Nine</div>
-        <div>
-          <p class="eyebrow">The Story</p>
-          <h2>Made by a Pole Dancer, for Pole Dancers</h2>
-          <p>On Cloud Nine was born from a simple idea: pole dancers deserve apparel that actually gets it. Not generic activewear with a vague "empowerment" message — real pieces made by someone who has gripped the pole, stuck the move, and felt that euphoric moment when everything clicks.</p>
-          <p>That feeling? That's Cloud Nine. And that's exactly what we're bottling up.</p>
-          <p>Created by April Piazza, award-winning pole athlete and founder of Pole Proficiency Aerial Fitness in Central Florida.</p>
-          <a href="index.html#about" class="btn btn-outline" style="margin-top:1rem">Meet April →</a>
+        <div class="size-chart">
+          <h3>Size Chart</h3>
+          <img src="store-size-chart.png" alt="Gildan 18000 size guide for crew-neck sweatshirt" />
         </div>
       </div>
     </div>
   </section>
-
-  <!-- WAITLIST -->
-  <section id="waitlist" class="waitlist">
-    <div class="container">
-      <p class="eyebrow center" style="color:rgba(255,255,255,0.5)">Stay in the Loop</p>
-      <h2>Sign Up for the Newsletter</h2>
-      <p>Fill out the form below to subscribe to the newsletter and be the first to know when the next design drop goes live.</p>
-      <form id="waitlistForm" class="waitlist-form" action="https://formspree.io/f/april.piazza@gmail.com" method="POST">
-        <input type="hidden" name="subject" value="On Cloud Nine Newsletter Signup" />
-        <input type="email" name="email" placeholder="your@email.com" required />
-        <button type="submit">Subscribe ☁️</button>
-      </form>
-      <p id="waitlistMessage" class="waitlist-message" aria-live="polite"></p>
-      <p class="waitlist-note">The Authentically Yours pre-sale is closed. Prefer socials? Follow @pole_prof on Instagram for new drop announcements too.</p>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container footer-inner">
-      <div class="footer-brand">On Cloud Nine</div>
-      <div class="footer-links">
-        <a href="index.html">Pole Proficiency</a>
-        <a href="polechat.html">PoleChat</a>
-        <a href="https://www.instagram.com/pole_prof/" target="_blank">Instagram</a>
-        <a href="#waitlist">Subscribe</a>
-      </div>
-      <p class="footer-copy">© 2026 On Cloud Nine · A Pole Proficiency Brand · All rights reserved.</p>
-    </div>
-  </footer>
 
   <script>
     const waitlistForm = document.getElementById('waitlistForm');
@@ -388,6 +247,12 @@
 
           waitlistForm.reset();
           waitlistMessage.textContent = 'Thank you! You’re on the newsletter list and will hear about the next design drop.';
+          if (typeof gtag === 'function') {
+            gtag('event', 'newsletter_signup', {
+              event_category: 'shop',
+              event_label: 'On Cloud Nine Newsletter Signup'
+            });
+          }
         } catch (err) {
           waitlistMessage.textContent = 'Something went wrong. Please try again or DM April on Instagram.';
         } finally {

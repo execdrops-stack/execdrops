@@ -2,13 +2,13 @@ plugins = []
 headers = []
 [[redirects]]
 from = "/onclouddnine"
-to = "/oncloudnine.html"
+to = "/oncloudnine"
 status = 301
 force = true
 
 [[redirects]]
 from = "/onclouddnine.html"
-to = "/oncloudnine.html"
+to = "/oncloudnine"
 status = 301
 force = true
 
