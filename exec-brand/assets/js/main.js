@@ -40,60 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ── Checkout CTA / Shopify buy button ──
+  // ── Checkout CTA ──
   const atcBtn = document.querySelector('.add-to-cart');
-  const shopifyConfig = window.EXEC_SHOPIFY_BUY_BUTTON;
-
-  function ensureShopifySdk() {
-    return new Promise((resolve, reject) => {
-      if (window.ShopifyBuy && window.ShopifyBuy.UI) {
-        resolve();
-        return;
-      }
-      const existing = document.querySelector('script[data-shopify-buy-sdk]');
-      if (existing) {
-        existing.addEventListener('load', resolve, { once: true });
-        existing.addEventListener('error', reject, { once: true });
-        return;
-      }
-      const script = document.createElement('script');
-      script.async = true;
-      script.src = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
-      script.dataset.shopifyBuySdk = 'true';
-      script.onload = resolve;
-      script.onerror = reject;
-      document.head.appendChild(script);
-    });
-  }
-
-  async function openShopifyCheckout() {
-    if (!shopifyConfig) return;
-    await ensureShopifySdk();
-    const client = window.ShopifyBuy.buildClient({
-      domain: shopifyConfig.domain,
-      storefrontAccessToken: shopifyConfig.storefrontAccessToken,
-    });
-
-    const product = await client.product.fetch(shopifyConfig.productId);
-    const activeSize = document.querySelector('.size-btn.active');
-    const size = activeSize ? activeSize.getAttribute('data-size') : null;
-    const variant = product.variants.find(v => {
-      const title = (v.title || '').toUpperCase();
-      return size && (title === size || title.includes(size));
-    }) || product.variants[0];
-
-    if (variant && variant.checkoutUrl) {
-      window.location.href = variant.checkoutUrl;
-      return;
-    }
-
-    const cart = await client.checkout.create();
-    await client.checkout.addLineItems(cart.id, [{ variantId: variant.id, quantity: 1 }]);
-    window.location.href = cart.webUrl;
-  }
+  const shopifyConfig = window.EXEC_SHOPIFY_VARIANTS;
 
   if (atcBtn) {
-    atcBtn.addEventListener('click', async (e) => {
+    atcBtn.addEventListener('click', (e) => {
       const activeSize = document.querySelector('.size-btn.active');
       const sizeGrid = document.querySelector('.size-grid');
       if (!activeSize) {
@@ -105,16 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      if (shopifyConfig) {
+      const size = activeSize.getAttribute('data-size');
+      const variantId = shopifyConfig && shopifyConfig.sizes ? shopifyConfig.sizes[size] : null;
+      if (!variantId) {
         e.preventDefault();
-        try {
-          atcBtn.textContent = 'OPENING CHECKOUT';
-          await openShopifyCheckout();
-        } catch (err) {
-          console.error(err);
-          atcBtn.textContent = 'TRY CHECKOUT AGAIN';
-        }
+        atcBtn.textContent = 'SIZE UNAVAILABLE';
+        setTimeout(() => { atcBtn.textContent = 'Checkout — $60'; }, 2000);
+        return;
       }
+
+      atcBtn.textContent = 'OPENING CHECKOUT';
+      atcBtn.href = `https://${shopifyConfig.domain}/cart/${variantId}:1?channel=buy_button`;
     });
   }
 

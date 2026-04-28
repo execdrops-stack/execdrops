@@ -283,8 +283,7 @@
       </div>
       <span class="size-note">Garment-dyed — runs slightly oversized. Size down if unsure.</span>
 
-      <button id="registerBtn" type="button" class="add-to-cart" data-shopify-product-id="8540141551753" style="display:block;text-align:center;text-decoration:none;margin-top:20px;">Checkout — $60</button>
-      <div id="product-component-1777399815174" style="display:none;"></div>
+      <a id="registerBtn" href="#" class="add-to-cart" style="display:block;text-align:center;text-decoration:none;margin-top:20px;">Checkout — $60</a>
       <p class="shipping-note">Select a size, then continue to Shopify checkout.</p>
 
       <!-- DESCRIPTION -->
@@ -393,11 +392,16 @@
 
   <script src="assets/js/main.js"></script>
   <script>
-    window.EXEC_SHOPIFY_BUY_BUTTON = {
+    window.EXEC_SHOPIFY_VARIANTS = {
       domain: 'sfvcyr-2i.myshopify.com',
-      storefrontAccessToken: '9ae0f407cfbab0a629fb9b4a83489d68',
-      productId: '8540141551753',
-      componentNodeId: 'product-component-1777399815174'
+      sizes: {
+        S: '45498112114825',
+        M: '45498112147593',
+        L: '45498112180361',
+        XL: '45498112213129',
+        '2XL': '45498112245897',
+        '3XL': '45498112278665'
+      }
     };
   </script>
   <script>
