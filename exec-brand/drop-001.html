@@ -275,27 +275,17 @@
       <!-- SIZE SELECT -->
       <p class="pdp-section-label">Select Size</p>
       <div class="size-grid" id="sizeGrid">
-        <button class="size-btn" data-size="S" onclick="selectSize(this)">S</button>
-        <button class="size-btn" data-size="M" onclick="selectSize(this)">M</button>
-        <button class="size-btn" data-size="L" onclick="selectSize(this)">L</button>
-        <button class="size-btn" data-size="XL" onclick="selectSize(this)">XL</button>
-        <button class="size-btn" data-size="2XL" onclick="selectSize(this)">2XL</button>
+        <button type="button" class="size-btn" data-size="S">S</button>
+        <button type="button" class="size-btn" data-size="M">M</button>
+        <button type="button" class="size-btn" data-size="L">L</button>
+        <button type="button" class="size-btn" data-size="XL">XL</button>
+        <button type="button" class="size-btn" data-size="2XL">2XL</button>
       </div>
       <span class="size-note">Garment-dyed — runs slightly oversized. Size down if unsure.</span>
 
-      <a id="registerBtn" href="mailto:execdrops@gmail.com?subject=EXEC%20Drop%20001%20Alignment%20Request&body=I%20want%20to%20reserve%20a%20Drop%20001%20unit.%0A%0ASize%3A%20" class="add-to-cart" style="display:block;text-align:center;text-decoration:none;margin-top:20px;">Request Alignment — $60</a>
-      <p class="shipping-note">Storefront opening is pending. Use this request flow to reserve a unit now. Limited to 100 units. No restock.</p>
-
-      <script>
-      function selectSize(btn) {
-        document.querySelectorAll('.size-btn').forEach(function(b){ b.classList.remove('active'); });
-        btn.classList.add('active');
-        var size = btn.getAttribute('data-size');
-        var base = 'mailto:execdrops@gmail.com?subject=EXEC%20Drop%20001%20Alignment%20Request&body=';
-        var body = encodeURIComponent('I want to reserve a Drop 001 unit.\n\nSize: ' + size + '\n');
-        document.getElementById('registerBtn').href = base + body;
-      }
-      </script>
+      <button id="registerBtn" type="button" class="add-to-cart" data-shopify-product-id="8540141551753" style="display:block;text-align:center;text-decoration:none;margin-top:20px;">Checkout — $60</button>
+      <div id="product-component-1777399815174" style="display:none;"></div>
+      <p class="shipping-note">Select a size, then continue to Shopify checkout.</p>
 
       <!-- DESCRIPTION -->
       <div class="pdp-desc" style="margin-top:32px;">
@@ -380,8 +370,11 @@
     <div style="text-align:center;padding:60px 40px;background:var(--near-black);">
       <p style="font-family:var(--mono);font-size:12px;letter-spacing:3px;color:var(--grey-600);text-transform:uppercase;margin-bottom:16px;">Drop 002 — Machine Loading</p>
       <p style="font-size:14px;color:var(--grey-400);margin-bottom:32px;">The next output is in process. Get early access before it drops.</p>
-      <form class="email-form" style="max-width:460px;margin:0 auto;" action="#" method="post">
-        <input type="email" placeholder="YOUR EMAIL" required>
+      <form class="email-form" style="max-width:460px;margin:0 auto;" name="early-access" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="early-access">
+        <input type="hidden" name="bot-field">
+        <input type="hidden" name="drop" value="Drop 002">
+        <input type="email" name="email" placeholder="YOUR EMAIL" required>
         <button type="submit">EARLY ACCESS</button>
       </form>
     </div>
@@ -399,6 +392,14 @@
   </footer>
 
   <script src="assets/js/main.js"></script>
+  <script>
+    window.EXEC_SHOPIFY_BUY_BUTTON = {
+      domain: 'sfvcyr-2i.myshopify.com',
+      storefrontAccessToken: '9ae0f407cfbab0a629fb9b4a83489d68',
+      productId: '8540141551753',
+      componentNodeId: 'product-component-1777399815174'
+    };
+  </script>
   <script>
     function showFace(face) {
       const panel = document.getElementById('mediaPanel');
