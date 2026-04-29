@@ -107,9 +107,9 @@ nav {
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 120px 40px 80px;
+  padding: 140px 40px 80px;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero::before {
@@ -144,11 +144,11 @@ nav {
   font-size: clamp(64px, 12vw, 160px);
   font-weight: 900;
   letter-spacing: -2px;
-  line-height: 1;
+  line-height: 1.05;
   color: var(--white);
   text-transform: uppercase;
   margin: 0 0 24px;
-  padding-top: 12px;
+  padding-top: 20px;
 }
 
 .hero-subtitle {
