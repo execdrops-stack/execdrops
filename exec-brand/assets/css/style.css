@@ -144,10 +144,11 @@ nav {
   font-size: clamp(64px, 12vw, 160px);
   font-weight: 900;
   letter-spacing: -2px;
-  line-height: 0.9;
+  line-height: 1;
   color: var(--white);
   text-transform: uppercase;
-  margin-bottom: 24px;
+  margin: 0 0 24px;
+  padding-top: 12px;
 }
 
 .hero-subtitle {

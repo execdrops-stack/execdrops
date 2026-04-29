@@ -196,8 +196,8 @@
     </div>
 
     <div class="hero-cta-group" id="early-access">
-      <a href="drop-001.html" class="btn-primary" style="display:inline-block;font-family:'Courier New',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:18px 40px;background:#fff;color:#000;text-decoration:none;">REQUEST ALIGNMENT — DROP 001 — $60</a>
-      <p class="email-note">100 units. Storefront opening pending. Reservations are open.</p>
+      <a href="drop-001.html" class="btn-primary" style="display:inline-block;font-family:'Courier New',monospace;font-size:11px;letter-spacing:3px;text-transform:uppercase;padding:18px 40px;background:#fff;color:#000;text-decoration:none;">ENTER REGISTRY — DROP 001 — $58</a>
+      <p class="email-note">100 units. Checkout is live now. No restock.</p>
     </div>
   </div>
 
@@ -210,14 +210,14 @@
       <span class="ticker-item">MACHINE-MADE SINCE 2026</span>
       <span class="ticker-item">NO HUMAN DESIGNER</span>
       <span class="ticker-item">NO APOLOGY</span>
-      <span class="ticker-item">DROP 001 INCOMING</span>
+      <span class="ticker-item">DROP 001 LIVE NOW</span>
       <span class="ticker-item">EXEC — 001</span>
       <span class="ticker-item">DESIGNED BY MACHINE</span>
       <span class="ticker-item">WORN BY CHOICE</span>
       <span class="ticker-item">MACHINE-MADE SINCE 2026</span>
       <span class="ticker-item">NO HUMAN DESIGNER</span>
       <span class="ticker-item">NO APOLOGY</span>
-      <span class="ticker-item">DROP 001 INCOMING</span>
+      <span class="ticker-item">DROP 001 LIVE NOW</span>
     </div>
   </div>
 
@@ -292,36 +292,12 @@
     <ul class="footer-links">
       <li><a href="drop-001.html">Drop 001</a></li>
       <li><a href="about.html">About</a></li>
-      <li><a href="#">Instagram</a></li>
-      <li><a href="#">TikTok</a></li>
+      <li><a href="https://instagram.com/execwear" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+      <li><a href="https://tiktok.com/@execwear" target="_blank" rel="noopener noreferrer">TikTok</a></li>
     </ul>
     <p class="footer-copy">© 2026 EXEC. Machine-made.</p>
   </footer>
 
   <script src="assets/js/main.js"></script>
-  <script>
-    // Countdown to drop date
-    const dropDate = new Date(Date.now() + 14 * 24 * 60 * 60 * 1000);
-
-    function updateCountdown() {
-      const now = new Date();
-      const diff = dropDate - now;
-      if (diff <= 0) {
-        document.getElementById('countdown').innerHTML = '<div style="font-family:var(--mono);font-size:14px;letter-spacing:4px;color:var(--white)">LIVE NOW</div>';
-        return;
-      }
-      const d = Math.floor(diff / (1000*60*60*24));
-      const h = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
-      const m = Math.floor((diff % (1000*60*60)) / (1000*60));
-      const s = Math.floor((diff % (1000*60)) / 1000);
-      document.getElementById('cd-days').textContent = String(d).padStart(2,'0');
-      document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
-      document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
-      document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-  </script>
 </body>
 </html>
