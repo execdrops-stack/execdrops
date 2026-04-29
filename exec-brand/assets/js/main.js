@@ -6,12 +6,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const forms = document.querySelectorAll('.email-form');
   forms.forEach(form => {
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
       const input = form.querySelector('input[type="email"]');
       const btn = form.querySelector('button');
       const val = input ? input.value.trim() : '';
 
       if (!input || !val || !val.includes('@')) {
+        e.preventDefault();
         if (input) {
           input.style.borderColor = 'rgba(255,80,80,0.5)';
           setTimeout(() => input.style.borderColor = '', 2000);
@@ -20,14 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (btn) {
-        btn.textContent = 'QUEUED';
+        btn.textContent = 'SUBMITTING';
         btn.style.background = '#1a1a1a';
         btn.style.color = '#888';
         btn.disabled = true;
       }
-      input.value = '';
-      input.placeholder = 'YOU\'RE IN THE LIST';
-      input.disabled = true;
     });
   });
 
@@ -62,12 +59,15 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!variantId) {
         e.preventDefault();
         atcBtn.textContent = 'SIZE UNAVAILABLE';
-        setTimeout(() => { atcBtn.textContent = 'Checkout — $60'; }, 2000);
+        setTimeout(() => { atcBtn.textContent = 'Checkout — $58'; }, 2000);
         return;
       }
 
+      e.preventDefault();
+      const checkoutUrl = `https://${shopifyConfig.domain}/cart/${variantId}:1?channel=buy_button`;
       atcBtn.textContent = 'OPENING CHECKOUT';
-      atcBtn.href = `https://${shopifyConfig.domain}/cart/${variantId}:1?channel=buy_button`;
+      atcBtn.href = checkoutUrl;
+      window.location.href = checkoutUrl;
     });
   }
 
