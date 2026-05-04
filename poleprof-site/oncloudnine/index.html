@@ -142,6 +142,23 @@
       padding: 1rem 1.25rem; border-radius: 999px; border: none; cursor: pointer;
     }
     .cta:hover { filter: brightness(0.98); }
+    .pay-link-slot {
+      margin: 1rem 0 1.15rem;
+      padding: 1rem 1.1rem;
+      border-radius: 14px;
+      border: 1px dashed var(--accent-dark);
+      background: #f7fcfe;
+      text-align: center;
+    }
+    .pay-link-slot strong {
+      display: block;
+      color: var(--ink);
+      margin-bottom: 0.35rem;
+    }
+    .pay-link-slot p {
+      margin: 0;
+      font-size: 0.94rem;
+    }
     .waitlist-message {
       min-height: 1.4rem;
       margin-top: 0.85rem;
@@ -227,6 +244,11 @@
           <div class="status-box">
             <strong>The pre-sale for the poker item is still closed.</strong><br />
             Please check back in for the next drop.
+          </div>
+
+          <div class="pay-link-slot" id="pay-link-slot">
+            <strong>Pay link goes here</strong>
+            <p>Drop in the payment link here when you're ready, just like last time.</p>
           </div>
 
           <div class="newsletter-wrap">
